@@ -56,4 +56,5 @@ class Donkey {
   void setA(float newA_) {
     donA = newA_;
   }
-}   
+}
+}
