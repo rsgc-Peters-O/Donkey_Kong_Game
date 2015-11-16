@@ -22,7 +22,14 @@ class Barrel {
     s1 = s1 + a1;
 
     // create the appearence of moving by changing the x position
-    x1= x1 + s1;
+    
+    if(y1 < 500)
+    {
+    y1= y1 + s1;
+    }else
+    {
+     x1 = x1 + s1; 
+    }
 
     // put the barrel back on right edge if it goes off left edge
     if (x1 < -25) {
