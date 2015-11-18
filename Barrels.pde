@@ -40,7 +40,7 @@ class Barrel {
 
     // draw the barrel
 
-    ellipse(x1, y1, r1*2, r1*2);
+    image(barrel, x1, y1, r1*2, r1*2);
   }
   //getX
   //Purpose: to return the x position of the barrel

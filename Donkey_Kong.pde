@@ -3,6 +3,7 @@ class Donkey {
   float donS;
   float donA;
   float donX;
+  float d;
 
   //constructor
 
@@ -59,3 +60,9 @@ class Donkey {
     donA = newA_;
   }
 }
+
+
+
+  
+  
+  

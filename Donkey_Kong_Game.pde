@@ -21,6 +21,7 @@ float gravity;
 int highscore = 0; // set score and highscore
 PImage hero1;
 PImage backround;
+PImage barrel;
 void setup() {
 
   size(1000, 600);
@@ -29,10 +30,11 @@ void setup() {
 
   hero1 = loadImage("images.jpeg");
   backround = loadImage("background.jpeg");
+  barrel = loadImage("barrel.jpeg");
 }
 void draw() {
 
-image(backround,0,0,1000,600);
+  image(backround, 0, 0, 1000, 600);
   d1.update(gravity);  
   bar1.update(gravity);
 
