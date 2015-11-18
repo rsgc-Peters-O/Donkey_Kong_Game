@@ -28,9 +28,10 @@ void setup() {
   d1=new Donkey(0, 0);
   bar1 = new Barrel(0, 0, .10, .10);
 
-  hero1 = loadImage("images.jpeg");
+  hero1 = loadImage("Mario.jpeg");
   backround = loadImage("background.jpeg");
-  barrel = loadImage("barrel.jpeg");
+  barrel = loadImage("Barrel.jpeg");
+  frameRate(70);
 }
 void draw() {
 
@@ -70,4 +71,42 @@ void draw() {
   //text("line2 is " + line2, 150, 120);
   //text("Score " + score, 750, 10);
   //}
+}
+
+void keyPressed(){
+  if (key==CODED){
+    if (keyCode ==UP){
+      d1.setA2(-50);
+      d1.setA1(0);
+    }
+    if (keyCode ==DOWN){
+      d1.setA2(50);
+      d1.setA1(0);
+    }
+    if (keyCode ==LEFT){
+      d1.setA1(-50);
+      d1.setA2(0);
+    }
+    if (keyCode ==RIGHT){
+      d1.setA1(50);
+      d1.setA2(0);
+    }
+  }
+}
+
+void keyReleased(){
+  if (key==CODED){
+    if (keyCode ==UP){
+      d1.setA2(0);
+    }
+    if (keyCode ==DOWN){
+      d1.setA2(0);
+    }
+    if (keyCode ==LEFT){
+      d1.setA1(0);
+    }
+    if (keyCode ==RIGHT){
+      d1.setA1(0);
+    }
+  }
 }

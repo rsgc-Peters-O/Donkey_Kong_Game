@@ -3,6 +3,8 @@ class Donkey {
   float donS;
   float donA;
   float donX;
+  float donA1;
+  float donA2;
   float d;
 
   //constructor
@@ -37,7 +39,8 @@ class Donkey {
 
     //donS = donS + donA; // change speed based on acceleration 
     //donY = donY + donS; // change location based on speed
-
+donX=donX+donA1;
+donY=donY+donA2;
 
     // stop the dino if it hits the ground
     if (donY > 570) { // bottome of the screen (200) minus the radius 
@@ -58,6 +61,12 @@ class Donkey {
   // from outside the class
   void setA(float newA_) {
     donA = newA_;
+  }
+  void setA1(float newA1_) {
+    donA1 = newA1_;
+  }
+  void setA2(float newA2_) {
+    donA2 = newA2_;
   }
 }
 
