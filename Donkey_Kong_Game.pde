@@ -22,6 +22,11 @@ int highscore = 0; // set score and highscore
 PImage hero1;
 PImage backround;
 PImage barrel;
+float y;
+float x;
+float m;
+float b;
+
 void setup() {
 
   size(1000, 600);
@@ -32,6 +37,19 @@ void setup() {
   backround = loadImage("background.jpeg");
   barrel = loadImage("Barrel.jpeg");
   frameRate(70);
+
+  // vertical intercept
+  b = 200;
+
+  // slope
+  m = 0.1;
+ 
+
+
+  // initial position
+  x = 0;
+  y = b;
+
 }
 void draw() {
 
@@ -48,8 +66,18 @@ void draw() {
     d1.setA(-1);
   }
 
+  // draw the current point
+  ellipse(x, y, 50, 50);
 
 
+
+  // change x
+  x = x + 5;
+
+
+    // change y based on x (input), the slope, and the vertical intercept
+    y = m*x + b;
+    
 
 
   //highscore = max(score, highscore);
@@ -73,39 +101,39 @@ void draw() {
   //}
 }
 
-void keyPressed(){
-  if (key==CODED){
-    if (keyCode ==UP){
-      d1.setA2(-50);
+void keyPressed() {
+  if (key==CODED) {
+    if (keyCode ==UP) {
+      d1.setA2(-20);
       d1.setA1(0);
     }
-    if (keyCode ==DOWN){
-      d1.setA2(50);
+    if (keyCode ==DOWN) {
+      d1.setA2(20);
       d1.setA1(0);
     }
-    if (keyCode ==LEFT){
-      d1.setA1(-50);
+    if (keyCode ==LEFT) {
+      d1.setA1(-20);
       d1.setA2(0);
     }
-    if (keyCode ==RIGHT){
-      d1.setA1(50);
+    if (keyCode ==RIGHT) {
+      d1.setA1(20);
       d1.setA2(0);
     }
   }
 }
 
-void keyReleased(){
-  if (key==CODED){
-    if (keyCode ==UP){
+void keyReleased() {
+  if (key==CODED) {
+    if (keyCode ==UP) {
       d1.setA2(0);
     }
-    if (keyCode ==DOWN){
+    if (keyCode ==DOWN) {
       d1.setA2(0);
     }
-    if (keyCode ==LEFT){
+    if (keyCode ==LEFT) {
       d1.setA1(0);
     }
-    if (keyCode ==RIGHT){
+    if (keyCode ==RIGHT) {
       d1.setA1(0);
     }
   }
