@@ -21,7 +21,29 @@ class Donkey {
   void update(float gravity) {
 
     //draw donkey
+if (donX<10){
+  donA1=0;
+  donX=11;
+  
+}
 
+if (donX<10){
+  donA1=0;
+  donX=11;
+  
+}
+
+if (donX<10){
+  donA1=0;
+  donA=11;
+  
+}
+
+if (donX<10){
+  donA1=0;
+  donX=11;
+  
+}
     fill(0);
     image(hero1,donX, donY, 60, 60);
 

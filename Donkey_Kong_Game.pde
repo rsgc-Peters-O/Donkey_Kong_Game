@@ -43,13 +43,12 @@ void setup() {
 
   // slope
   m = 0.1;
- 
+
 
 
   // initial position
   x = 0;
   y = b;
-
 }
 void draw() {
 
@@ -75,9 +74,9 @@ void draw() {
   x = x + 5;
 
 
-    // change y based on x (input), the slope, and the vertical intercept
-    y = m*x + b;
-    
+  // change y based on x (input), the slope, and the vertical intercept
+  y = m*x + b;
+
 
 
   //highscore = max(score, highscore);
@@ -92,14 +91,15 @@ void draw() {
   //line2=sqrt(c2);
 
   //status updates;
-  //text("dinoY is " + donY, 150, 25);
-  //text("dinoS is " + donS, 150, 50);
-  //text("dinoA is " + donA, 150, 75);
+  //text("dnoY is " + donY, 150, 25);
+  //text("dnoS is " + donS, 150, 50);
+  //text("dnoA is " + donA, 150, 75);
   //text("line1 is " + line1, 150, 100);
   //text("line2 is " + line2, 150, 120);
   //text("Score " + score, 750, 10);
   //}
 }
+
 
 void keyPressed() {
   if (key==CODED) {
