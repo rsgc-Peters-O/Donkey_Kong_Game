@@ -5,7 +5,7 @@ float y1; //tracks vertical position of the first Barrel
 float a1; // tracks acceleration of the first cactus 
 float s1;  //tracks the speed of the first Barrel
 float r1;  //tracks the radius of the Barell
-float x2;
+float x2; 
 float donY;
 float donS;
 float donA;
@@ -22,6 +22,7 @@ int highscore = 0; // set score and highscore
 PImage hero1;
 PImage backround;
 PImage barrel;
+PImage ladder;
 float y;
 float x;
 float m;
@@ -36,6 +37,7 @@ void setup() {
   hero1 = loadImage("Mario.jpeg");
   backround = loadImage("background.jpeg");
   barrel = loadImage("Barrel.jpeg");
+  ladder = loadImage("ladder.jpeg");
   frameRate(70);
 
   // vertical intercept
@@ -96,8 +98,23 @@ void draw() {
   //text("dnoA is " + donA, 150, 75);
   //text("line1 is " + line1, 150, 100);
   //text("line2 is " + line2, 150, 120);
-  //text("Score " + score, 750, 10);
+  //text("Score " + score, 750, 10)  ;
   //}
+  text("mouse x "+ mouseX, 50, 50);
+  text("mouse y "+ mouseY, 50, 70);
+  line(mouseX-10, mouseY, mouseX+10, mouseY);
+  line(mouseX, mouseY-10, mouseX, mouseY+10);
+
+  //Draw the platform
+
+  line(0, 540, 997, 540);
+  line(0, 366, 884, 426);
+  stroke(-100);
+
+  //Ladder
+
+
+  image(ladder, 890, 435, 95, 95);
 }
 
 

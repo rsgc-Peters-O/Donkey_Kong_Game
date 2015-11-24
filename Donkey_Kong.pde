@@ -91,9 +91,3 @@ donY=donY+donA2;
     donA2 = newA2_;
   }
 }
-
-
-
-  
-  
-  
