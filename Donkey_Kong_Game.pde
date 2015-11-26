@@ -23,6 +23,8 @@ PImage hero1;
 PImage backround;
 PImage barrel;
 PImage ladder;
+PImage badguy;
+PImage stack;
 float y;
 float x;
 float m;
@@ -38,6 +40,8 @@ void setup() {
   backround = loadImage("background.jpeg");
   barrel = loadImage("Barrel.jpeg");
   ladder = loadImage("ladder.jpeg");
+  badguy= loadImage ("badguy.jpeg");
+  stack= loadImage ("stack.jpeg"); 
   frameRate(70);
 
   // vertical intercept
@@ -108,13 +112,18 @@ void draw() {
   //Draw the platform
 
   line(0, 540, 997, 540);
-  line(0, 366, 884, 426);
+  line(0, 400, 890, 430);
+  line(300, 80, 600, 80);
   stroke(-100);
 
   //Ladder
 
-
   image(ladder, 890, 435, 95, 95);
+
+  // Bad Guy
+
+  image(badguy, 385, 30, 50, 50);
+  image(stack, 493, 30, 50, 50);
 }
 
 
