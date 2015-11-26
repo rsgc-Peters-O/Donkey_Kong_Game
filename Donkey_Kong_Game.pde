@@ -25,6 +25,7 @@ PImage barrel;
 PImage ladder;
 PImage badguy;
 //PImage stack;
+PImage barrel2;
 float y;
 float x;
 float m;
@@ -44,6 +45,7 @@ void setup() {
   ladder = loadImage("ladder.jpeg");
   badguy= loadImage ("badguy.gif");
   //stack= loadImage ("stack.jpeg"); 
+  barrel2= loadImage("barrel 2.png");
   frameRate(70);
 
   // vertical intercept
@@ -61,20 +63,20 @@ void setup() {
   u=1;
 }
 void draw() {
-if (x>950){
-  w=-10;
-  x=949;
-  y=y+50;
-}
-if (x<50){
-  w=10;
+  if (x>950) {
+    w=-10;
+    x=949;
+    y=y+50;
+  }
+  if (x<50) {
+    w=10;
     x=51;
-      y=y+50;
-}
-if (y>585){
-u=0;
-  w=10;
-}
+    y=y+50;
+  }
+  if (y>585) {
+    u=0;
+    w=10;
+  }
   image(backround, 0, 0, 1000, 600);
   d1.update(gravity);  
   bar1.update(gravity);
@@ -89,7 +91,7 @@ u=0;
   }
 
   // draw the current point
-  ellipse(x, y, 50, 50);
+  image(barrel2, x, y, 50, 50);
 
 
 
@@ -101,15 +103,15 @@ u=0;
   //y = m*x + b;
   y=y+u;
 
-line(570,50,965,103);
-line(965,103,35,208);
-line(35,208,965,313);
-ellipse(965,141,10,10);
-ellipse(35,321,10,10);
-ellipse(965,516,10,10);
-ellipse(35,141,10,10);
-line(348, 78, 550, 78);
-
+  line(570, 50, 965, 103);
+  line(965, 103, 35, 208);
+  line(35, 208, 965, 313);
+  ellipse(965, 141, 10, 10);
+  ellipse(35, 321, 10, 10);
+  ellipse(965, 516, 10, 10);
+  ellipse(35, 141, 10, 10);
+  line(348, 78, 550, 78);
+  line(0, 558, 998, 558);
   //highscore = max(score, highscore);
 
   //b1=170-donY;
