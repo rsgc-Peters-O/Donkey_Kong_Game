@@ -26,6 +26,7 @@ PImage ladder;
 PImage badguy;
 //PImage stack;
 PImage barrel2;
+PImage platform;
 float y;
 float x;
 float m;
@@ -46,6 +47,7 @@ void setup() {
   badguy= loadImage ("badguy.gif");
   //stack= loadImage ("stack.jpeg"); 
   barrel2= loadImage("barrel 2.png");
+  platform=loadImage("platform.png");
   frameRate(70);
 
   // vertical intercept
@@ -110,7 +112,7 @@ void draw() {
   ellipse(35, 321, 10, 10);
   ellipse(965, 516, 10, 10);
   ellipse(35, 141, 10, 10);
-  line(348, 78, 550, 78);
+  image(platform, 280, 70, 550, 70);
   line(0, 558, 998, 558);
   //highscore = max(score, highscore);
 
