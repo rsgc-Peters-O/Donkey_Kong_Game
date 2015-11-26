@@ -24,11 +24,13 @@ PImage backround;
 PImage barrel;
 PImage ladder;
 PImage badguy;
-PImage stack;
+//PImage stack;
 float y;
 float x;
 float m;
 float b;
+float w;
+float u;
 
 void setup() {
 
@@ -36,16 +38,16 @@ void setup() {
   d1=new Donkey(0, 0);
   bar1 = new Barrel(0, 0, .10, .10);
 
-  hero1 = loadImage("Mario.jpeg");
+  hero1 = loadImage("Mario.png");
   backround = loadImage("background.jpeg");
-  barrel = loadImage("Barrel.jpeg");
+  barrel = loadImage("Barrel.png");
   ladder = loadImage("ladder.jpeg");
-  badguy= loadImage ("badguy.jpeg");
-  stack= loadImage ("stack.jpeg"); 
+  badguy= loadImage ("badguy.gif");
+  //stack= loadImage ("stack.jpeg"); 
   frameRate(70);
 
   // vertical intercept
-  b = 200;
+  b = 30;
 
   // slope
   m = 0.1;
@@ -53,11 +55,26 @@ void setup() {
 
 
   // initial position
-  x = 0;
-  y = b;
+  x = 570;
+  y = 50;
+  w=10;
+  u=1;
 }
 void draw() {
-
+if (x>950){
+  w=-10;
+  x=949;
+  y=y+50;
+}
+if (x<50){
+  w=10;
+    x=51;
+      y=y+50;
+}
+if (y>585){
+u=0;
+  w=10;
+}
   image(backround, 0, 0, 1000, 600);
   d1.update(gravity);  
   bar1.update(gravity);
@@ -77,13 +94,21 @@ void draw() {
 
 
   // change x
-  x = x + 5;
+  x = x + w;
 
 
   // change y based on x (input), the slope, and the vertical intercept
-  y = m*x + b;
+  //y = m*x + b;
+  y=y+u;
 
-
+line(570,50,965,103);
+line(965,103,35,208);
+line(35,208,965,313);
+ellipse(965,141,10,10);
+ellipse(35,321,10,10);
+ellipse(965,516,10,10);
+ellipse(35,141,10,10);
+line(348, 78, 550, 78);
 
   //highscore = max(score, highscore);
 
@@ -109,21 +134,15 @@ void draw() {
   line(mouseX-10, mouseY, mouseX+10, mouseY);
   line(mouseX, mouseY-10, mouseX, mouseY+10);
 
-  //Draw the platform
 
-  line(0, 540, 997, 540);
-  line(0, 400, 890, 430);
-  line(300, 80, 600, 80);
-  stroke(-100);
+  //Draw the Ladder
 
-  //Ladder
-
-  image(ladder, 890, 435, 95, 95);
+  //image(ladder, 890, 435, 95, 95);
 
   // Bad Guy
 
   image(badguy, 385, 30, 50, 50);
-  image(stack, 493, 30, 50, 50);
+  //image(stack, 493, 30, 50, 50);
 }
 
 
