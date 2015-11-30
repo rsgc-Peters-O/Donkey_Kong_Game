@@ -6,6 +6,7 @@ class Donkey {
   float donA1;
   float donA2;
   float d;
+  int r;
 
   //constructor
 
@@ -14,6 +15,7 @@ class Donkey {
     donY= 500;
     donX= 100;
     donS= S_;
+    r=30;
   }
 
   //updating and drawing the Donkey on the screen
@@ -45,7 +47,7 @@ if (donX<10){
   
 }
     fill(0);
-    image(hero1,donX, donY, 60, 60);
+    image(hero1,donX, donY, r*2, r*2);
 
     //move donkey
 
@@ -89,5 +91,16 @@ donY=donY+donA2;
   }
   void setA2(float newA2_) {
     donA2 = newA2_;
+  }
+   boolean isTouching(Barrel b) {
+
+    // determine distance between the objects.
+    float a = (y1+r) - b.getY();
+    float c = (x1+r) - b.getX();
+    float distance = sqrt(a*a + c*c);
+    if ( distance < (   r    +     b.getR()) ) {
+      return true;
+    }
+    return false;
   }
 }

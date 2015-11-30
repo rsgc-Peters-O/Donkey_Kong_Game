@@ -27,6 +27,8 @@ PImage badguy;
 //PImage stack;
 PImage barrel2;
 PImage platform;
+PImage ladder1;
+PImage ladder2;
 float y;
 float x;
 float m;
@@ -48,6 +50,8 @@ void setup() {
   //stack= loadImage ("stack.jpeg"); 
   barrel2= loadImage("barrel 2.png");
   platform=loadImage("platform.png");
+  ladder1=loadImage("ladder.png");
+  ladder2=loadImage("ladder.png");
   frameRate(70);
 
   // vertical intercept
@@ -85,7 +89,9 @@ void draw() {
 
   Barrel c1;
   Barrel c2;
-
+  if (d1.isTouching(bar1)) {
+    noLoop();
+  }
   //void keyPressed() {
 
   if (d1.getY() == 500) {
@@ -105,15 +111,26 @@ void draw() {
   //y = m*x + b;
   y=y+u;
 
-  //line(570, 50, 965, 103);
-  line(965, 142, 35, 208);
-  line(47, 249, 965, 313);
-  ellipse(965, 141, 10, 10);
+  //The plat Forms
+  strokeWeight(5);
+  line(965, 192, 744, 213);
+  line(660, 222, 50, 279);
+  //line(965, 192, 744, 213);
+  line(965, 192, 876, 202);
+  line(36, 322, 978, 417);
+  ellipse(965, 200, 10, 10);
   ellipse(35, 321, 10, 10);
   ellipse(965, 516, 10, 10);
   ellipse(35, 141, 10, 10);
   image(platform, 280, 70, 550, 70);
   line(0, 558, 998, 558);
+  stroke(-200);
+
+  //The ladders
+
+  image(ladder1, 660, 226, 80, 165);
+  image(ladder2, 53, 282, 30, 50);
+
   //highscore = max(score, highscore);
 
   //b1=170-donY;

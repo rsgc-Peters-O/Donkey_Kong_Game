@@ -50,6 +50,7 @@ class Barrel {
   }
 
 
+
   // getX
   // Purpose: an accessor method; lets us find out where the barrel is (horizontally)
   //float getX() {
