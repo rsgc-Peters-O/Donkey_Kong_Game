@@ -29,21 +29,21 @@ if (donX<10){
   
 }
 
-if (donX<10){
+if (donX>950){
   donA1=0;
-  donX=11;
+  donX=950;
   
 }
 
-if (donX<10){
+if (donY<0){
   donA1=0;
-  donA=11;
+  donY=0;
   
 }
 
-if (donX<10){
+if (donY>490){
   donA1=0;
-  donX=11;
+  donY=490;
   
 }
     fill(0);
