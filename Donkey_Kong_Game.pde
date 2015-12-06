@@ -31,6 +31,8 @@ PImage ladder1;
 PImage ladder2;
 PImage ladder3;
 PImage ladder4;
+PImage pedistal;
+PImage Hammer;
 float y;
 float x;
 float m;
@@ -56,6 +58,8 @@ void setup() {
   ladder2=loadImage("ladder.png");
   ladder3=loadImage("ladder.png");
   ladder4=loadImage("ladder.png");
+  pedistal=loadImage("pedisal.png");
+  Hammer=loadImage("Hammer.png");
   frameRate(70);
 
   // vertical intercept
@@ -137,6 +141,8 @@ void draw() {
   image(ladder2, 53, 282, 30, 50);
   image(ladder3, 950, 420, 30, 58);
   image(ladder4, 612, 505, 30, 56);
+  image(pedistal, 300, 563, 150, -150);
+  image(Hammer, 348, 460, 50, 50);
 
 
   //highscore = max(score, highscore);
