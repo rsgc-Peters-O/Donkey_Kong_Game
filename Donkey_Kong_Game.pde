@@ -173,7 +173,9 @@ void draw() {
   //Draw the Ladder
 
   //image(ladder, 890, 435, 95, 95);
-
+if (d1.isTouching(bar1)) {
+  noLoop();
+}
   // Bad Guy
 
   image(badguy, 385, 30, 50, 50);
@@ -192,15 +194,25 @@ void keyPressed() {
       d1.setA1(0);
     }
     if (keyCode ==LEFT) {
+      if (x<569){
+        d1.setA1(20);
+      d1.setA2(1.8);
+     }
       d1.setA1(-20);
       d1.setA2(0);
     }
     if (keyCode ==RIGHT) {
+     if (x<569){
+        d1.setA1(20);
+      d1.setA2(1.8);
+     }
       d1.setA1(20);
       d1.setA2(0);
+     
     }
   }
 }
+
 
 void keyReleased() {
   if (key==CODED) {
